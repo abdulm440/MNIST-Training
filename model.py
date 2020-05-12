@@ -21,10 +21,3 @@ class DigitRecognizer(nn.Module):
     x = x.view(-1, 10*4*4)
     x = func.softmax(self.linear1(x), dim=1)
     return x
-
-# model = DigitRecognizer()
-# model.load_state_dict(torch.load("MNIST.pth"))
-# model.eval()
-#
-# data_train = list(datasets.MNIST('data',train=True, download=True,transform=transforms.ToTensor()))[:40000]
-# sample = data_train[0][0]
